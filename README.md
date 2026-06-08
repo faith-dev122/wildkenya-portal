@@ -1,11 +1,10 @@
-# 🦒 WildKenya — Virtual Safari Guide \& Kenya Parks Information Portal
+# WildKenya - Virtual Safari Guide \& Kenya Parks Information Portal
 
-> \*\*BIT3208: Advanced Web Design and Development — Capstone Project\*\*
+> \*\*BIT3208: Advanced Web Design and Development \*\*
 > A fully functional multi-tier web application for Kenya wildlife tourism
 
-\---
 
-## 📋 Table of Contents
+## Table of Contents
 
 * [Project Overview](#project-overview)
 * [System Features](#system-features)
@@ -19,19 +18,15 @@
 * [Security Implementation](#security-implementation)
 * [CAT Requirements Coverage](#cat-requirements-coverage)
 * [Screenshots](#screenshots)
-* [Author](#author)
 
-\---
+## Project Overview
 
-## 🌍 Project Overview
-
-**WildKenya** is a virtual safari guide and Kenya national parks information portal built as a capstone project for BIT3208 (Advanced Web Design and Development). The system allows tourists to explore Kenya's national parks, discover wildlife species, find and book certified safari guides, make safari bookings, plan multi-park itineraries, and leave reviews — all through a single responsive web platform.
+**WildKenya** is a virtual safari guide and Kenya national parks information portal built as a capstone project for BIT3208 (Advanced Web Design and Development). The system allows tourists to explore Kenya's national parks, discover wildlife species, find and book certified safari guides, make safari bookings, plan multi-park itineraries, and leave reviews all through a single responsive web platform.
 
 The application mirrors real-world tourism platforms like **Kenya Wildlife Service (KWS)**, **Safarilink**, and **Airbnb Experiences**, adapted for the Kenyan safari and wildlife tourism industry.
 
-\---
 
-## ⭐ System Features
+## System Features
 
 ### Public Features (No Login Required)
 
@@ -64,15 +59,11 @@ The application mirrors real-world tourism platforms like **Kenya Wildlife Servi
 * Monitor booking status overview with progress indicators
 * Add or remove featured parks and spotlight animals
 
-\---
-
-## 👥 User Types \& Roles
+## User Types \& Roles
 
 The system has three distinct user roles, each with different access levels:
 
-\---
-
-### 🌍 Guest (Not Logged In)
+### Guest (Not Logged In)
 
 A guest is any visitor who has not created an account or logged in.
 
@@ -94,9 +85,7 @@ A guest is any visitor who has not created an account or logged in.
 * View a personal dashboard
 * Access any admin functionality
 
-\---
-
-### 🧳 Tourist (Registered \& Logged In)
+### Tourist (Registered \& Logged In)
 
 A tourist is a registered user who has selected the **Tourist** account type during registration.
 
@@ -144,9 +133,7 @@ A tourist is a registered user who has selected the **Tourist** account type dur
 * View or manage other users' bookings
 * Change their own booking status
 
-\---
-
-### 🧭 Safari Guide (Registered \& Logged In)
+### Safari Guide (Registered \& Logged In)
 
 A safari guide is a registered user who has selected the **Safari Guide** account type during registration.
 
@@ -164,9 +151,7 @@ A safari guide is a registered user who has selected the **Safari Guide** accoun
 * Access the admin panel
 * Modify park or animal records
 
-\---
-
-### 🛡️ Admin (Admin Account)
+### Admin (Admin Account)
 
 The admin is a system administrator with full access to all site management features.
 
@@ -206,9 +191,7 @@ The admin is a system administrator with full access to all site management feat
 
 * Register through the public registration form (admin accounts are created directly in the database)
 
-\---
-
-## 📄 Pages \& Functionality
+## Pages \& Functionality
 
 |Page|URL|Access|Description|
 |-|-|-|-|
@@ -228,9 +211,7 @@ The admin is a system administrator with full access to all site management feat
 |Admin Parks|`/wildkenya/admin/parks.php`|Admin only|Full CRUD management for parks|
 |Admin Animals|`/wildkenya/admin/animals.php`|Admin only|Full CRUD management for animals|
 
-\---
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -265,9 +246,7 @@ The admin is a system administrator with full access to all site management feat
 |Git|Version control|
 |GitHub|Remote repository and code backup|
 
-\---
-
-## 🗄️ Database Schema
+## Database Schema
 
 The application uses **7 database tables** in a MySQL database named `wildkenya`.
 
@@ -380,7 +359,6 @@ Stores park reviews submitted by logged-in users.
 |comment|TEXT|Written review|
 |created\_at|TIMESTAMP|Review submission date|
 
-\---
 
 ## ⚙️ Installation \& Setup
 
@@ -391,7 +369,7 @@ Stores park reviews submitted by logged-in users.
 * Git installed (download from git-scm.com)
 * VS Code (download from code.visualstudio.com)
 
-### Step 1 — Clone the Repository
+### Step 1 Clone the Repository
 
 ```bash
 git clone https://github.com/faith-dev122/wildkenya.git
@@ -399,7 +377,7 @@ git clone https://github.com/faith-dev122/wildkenya.git
 
 Or download the ZIP from GitHub and extract it.
 
-### Step 2 — Move to XAMPP
+### Step 2 Move to XAMPP
 
 Copy the `wildkenya` folder to:
 
@@ -407,7 +385,7 @@ Copy the `wildkenya` folder to:
 C:\\xampp\\htdocs\\wildkenya\\
 ```
 
-### Step 3 — Start XAMPP
+### Step 3 Start XAMPP
 
 Open XAMPP Control Panel and click **Start** next to:
 
@@ -416,7 +394,7 @@ Open XAMPP Control Panel and click **Start** next to:
 
 Both should turn green.
 
-### Step 4 — Create the Database
+### Step 4 Create the Database
 
 1. Open your browser and go to `http://localhost/phpmyadmin`
 2. Click **New** in the left sidebar
@@ -427,7 +405,7 @@ Both should turn green.
 
 You should see all 7 tables created with data pre-loaded.
 
-### Step 5 — Access the Application
+### Step 5 Access the Application
 
 Open your browser and go to:
 
@@ -435,15 +413,13 @@ Open your browser and go to:
 http://localhost/wildkenya/
 ```
 
-\---
-
-## 🔑 Login Credentials
+## Login Credentials
 
 ### Admin Account
 
 ```
 Email:    admin@wildkenya.co.ke
-Password: \[set by admin — see setup]
+Password: \[set by admin  see setup]
 Role:     Admin
 ```
 
@@ -451,9 +427,7 @@ Role:     Admin
 
 Register a new account at `http://localhost/wildkenya/pages/register.php` with any email and password (minimum 8 characters).
 
-\---
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 wildkenya/
@@ -498,9 +472,7 @@ wildkenya/
         └── animals/             # Animal images (animal-1.jpg to animal-15.jpg)
 ```
 
-\---
-
-## 🔒 Security Implementation
+## Security Implementation
 
 The application implements multiple layers of security:
 
@@ -539,31 +511,7 @@ The application implements multiple layers of security:
 * Client-side JavaScript validation for instant user feedback
 * Email validated using PHP `filter\_var(FILTER\_VALIDATE\_EMAIL)`
 * Numeric inputs validated for range (group size 1–20, duration 1–30 days)
-* Booking date validated to prevent past dates
-
-\---
-
-## ✅ CAT Requirements Coverage
-
-### CAT 1 (Week 6) — 15 Marks: Foundations \& Core Setup
-
-|Requirement|Implementation|
-|-|-|
-|Local development environment|XAMPP with Apache + MySQL running on localhost|
-|Product catalog (HTML, CSS, JavaScript)|parks.php and animals.php — searchable, filterable card grids using Bootstrap 5|
-|Form validation|register.php — JS password strength + PHP server-side validation|
-|Database CRUD operations|admin/parks.php and admin/animals.php — full Create, Read, Update, Delete|
-|Secure login system|login.php using password\_hash(), password\_verify(), and PHP sessions|
-
-### Weekly Topic Coverage
-
-|Week|Topic|Implementation in WildKenya|
-|-|-|-|
-|Week 1|Networking (HTTP, local server)|XAMPP Apache serves pages over HTTP at localhost port 80|
-|Week 2|Client-side components (HTML, XML)|Semantic HTML5 throughout — header, nav, main, section, footer|
-|Week 3|JavaScript \& form validation|main.js — password strength, form validation, live cost calculator, trip planner|
-|Week 4|Server-side components (PHP)|All pages use PHP — login, register, booking, admin panel|
-|Week 5|Database components (SQL, CRUD)|MySQL with 7 tables, prepared statements, INSERT, SELECT, UPDATE, DELETE|
+* Booking date validated to prevent past date
 
 ### Security Requirements
 
@@ -575,9 +523,7 @@ The application implements multiple layers of security:
 |Session management|$\_SESSION used across all protected pages, logout destroys session|
 |Input sanitisation|htmlspecialchars() on all output, filter\_var() on email inputs|
 
-\---
-
-## 📊 Data Summary
+## Data Summary
 
 |Category|Count|
 |-|-|
@@ -603,9 +549,7 @@ The application implements multiple layers of security:
 
 African Lion, African Elephant, Black Rhinoceros, African Leopard, Plains Zebra, Wildebeest, Cheetah, Masai Giraffe, Hippopotamus, African Buffalo, Lesser Flamingo, Reticulated Giraffe, Grevy's Zebra, African Wild Dog, Mountain Bongo
 
-\---
-
-## 📸 Screenshots
+## Screenshots
 
 Screenshots are available in the `/screenshots` folder showing:
 
@@ -620,26 +564,14 @@ Screenshots are available in the `/screenshots` folder showing:
 * Admin parks management table
 * Admin add/edit park form
 
-\---
-
-## 👩‍💻 Author
+## Author
 
 **Student:** Faith Wanjiku
-**GitHub:** github.com/faith-dev122/wildkenya
-**Course:** BIT3208 — Advanced Web Design and Development
-**Institution:** \[Your University Name]
+**GitHub:** github.com/faith-dev122/wildkenya-portal
+**Course:** BIT3208 - Advanced Web Design and Development
+**Institution:** Mount Kenya University
 **Year:** 2026
-**Project Type:** Individual Capstone Project
+**Project Type:** Capstone Project
 
-\---
-
-## 📜 License
-
-This project was developed for academic purposes as part of BIT3208 coursework.
-All Kenya wildlife data is accurate as of May 2026.
-Park entry fees sourced from Kenya Wildlife Service (KWS) published rates.
-
-\---
-
-*WildKenya — Discover the Wild Heart of Kenya* 🦒
+*WildKenya Discover the Wild Heart of Kenya* 
 
