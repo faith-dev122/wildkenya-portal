@@ -566,7 +566,7 @@ Screenshots are available in the `/screenshots` folder showing:
 
 ## Author
 
-**Student:** Faith Wanjiku
+**Student:** Faith Wanja Gichure
 **GitHub:** github.com/faith-dev122/wildkenya-portal
 **Course:** BIT3208 - Advanced Web Design and Development
 **Institution:** Mount Kenya University
