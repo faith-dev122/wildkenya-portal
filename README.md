@@ -3,6 +3,9 @@
 > \*\*BIT3208: Advanced Web Design and Development \*\*
 > A fully functional multi-tier web application for Kenya wildlife tourism
 
+**Student:** Faith Wanja Gichure  
+**Admission Number:** BSCCS/2024/31978  
+**Unit:** BIT4133 - Natural Language Processing with Deep Learning 
 
 ## Table of Contents
 
