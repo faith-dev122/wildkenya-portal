@@ -479,7 +479,7 @@ The application implements multiple layers of security:
 ### Password Security
 
 * All passwords hashed using **bcrypt** via PHP `password\_hash(PASSWORD\_BCRYPT)`
-* Passwords verified using `password\_verify()` — plain text passwords are never stored
+* Passwords verified using `password\_verify()` - plain text passwords are never stored
 * Password strength enforced: minimum 8 characters with client-side strength indicator
 
 ### SQL Injection Prevention
@@ -534,16 +534,16 @@ The application implements multiple layers of security:
 
 ### Parks Included
 
-1. Maasai Mara National Reserve (Narok — Rift Valley)
-2. Amboseli National Park (Kajiado — Rift Valley)
-3. Tsavo East National Park (Taita-Taveta — Coast)
-4. Tsavo West National Park (Taita-Taveta — Coast)
-5. Lake Nakuru National Park (Nakuru — Rift Valley)
-6. Hell's Gate National Park (Nakuru — Rift Valley)
-7. Samburu National Reserve (Samburu — Northern Kenya)
-8. Aberdare National Park (Nyandarua — Central)
-9. Mount Kenya National Park (Nyeri — Central)
-10. Nairobi National Park (Nairobi — Central)
+1. Maasai Mara National Reserve (Narok - Rift Valley)
+2. Amboseli National Park (Kajiado - Rift Valley)
+3. Tsavo East National Park (Taita-Taveta - Coast)
+4. Tsavo West National Park (Taita-Taveta - Coast)
+5. Lake Nakuru National Park (Nakuru - Rift Valley)
+6. Hell's Gate National Park (Nakuru - Rift Valley)
+7. Samburu National Reserve (Samburu - Northern Kenya)
+8. Aberdare National Park (Nyandarua - Central)
+9. Mount Kenya National Park (Nyeri - Central)
+10. Nairobi National Park (Nairobi - Central)
 
 ### Wildlife Species Included
 
