@@ -2,6 +2,7 @@
 // Start session if not already started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+    require_once __DIR__ . '/remember_me.php';
 }
 ?>
 <!DOCTYPE html>

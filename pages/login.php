@@ -2,6 +2,7 @@
 // ============================================================
 // WildKenya — Login Page (pages/login.php)
 // Secure login using PHP sessions and password_verify()
+// Bonus Feature: Remember Me Functionality
 // ============================================================
 require_once '../config/db.php';
 require_once '../includes/header.php';
@@ -23,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email    = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
+    $remember = isset($_POST['remember_me']);
 
     // Basic validation
     if (empty($email) || empty($password)) {
@@ -51,6 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_name'] = $user['name'];
                 $_SESSION['user_email']= $user['email'];
                 $_SESSION['user_role'] = $user['role'];
+
+                // ---- Bonus Feature: Remember Me ----
+                // Token is derived from the password hash, so it
+                // automatically becomes invalid if the password is changed
+                if ($remember) {
+                    $token = hash_hmac('sha256', (string)$user['id'], $user['password']);
+                    $cookie_value = $user['id'] . ':' . $token;
+                    setcookie('wildkenya_remember', $cookie_value, time() + (30 * 24 * 60 * 60), '/');
+                }
 
                 // Redirect based on role
                 if ($user['role'] === 'admin') {
@@ -126,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
 
                             <!-- Password -->
-                            <div class="mb-4">
+                            <div class="mb-3">
                                 <div class="d-flex justify-content-between">
                                     <label for="password" class="form-label fw-bold small">
                                         Password
@@ -145,6 +156,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <i class="bi bi-eye"></i>
                                     </button>
                                 </div>
+                            </div>
+
+                            <!-- Remember Me -->
+                            <div class="mb-4 form-check">
+                                <input type="checkbox"
+                                       class="form-check-input"
+                                       id="remember_me"
+                                       name="remember_me">
+                                <label class="form-check-label small text-muted" for="remember_me">
+                                    Remember me for 30 days
+                                </label>
                             </div>
 
                             <!-- Submit -->

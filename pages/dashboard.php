@@ -266,6 +266,9 @@ function bookingBadge($status) {
                             <a href="booking.php" class="btn btn-success btn-sm text-start">
                                 <i class="bi bi-calendar-plus-fill me-2"></i>Book a Safari
                             </a>
+                            <a href="profile.php" class="btn btn-outline-success btn-sm text-start">
+                                <i class="bi bi-person-gear me-2"></i>My Profile
+                            </a>
                             <hr class="my-1">
                             <a href="/wildkenya/logout.php"
                                class="btn btn-outline-danger btn-sm text-start">
