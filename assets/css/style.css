@@ -1,6 +1,7 @@
 /* ============================================================
    WildKenya — Custom Stylesheet (style.css)
    BIT3208 Capstone Project
+   Week 8 Update: Responsive Web Design and Mobile-First Development
 ============================================================ */
 
 /* --- Root Variables --- */
@@ -11,13 +12,187 @@
     --wk-gold:        #d4a017;
 }
 
-/* --- Base --- */
+/* ============================================================
+   MOBILE-FIRST BASE STYLES
+   These styles apply to mobile phones first (0px and above).
+   Larger screen styles are added below using min-width queries.
+============================================================ */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2c2c2c;
+    font-size: 15px;
 }
 
-/* --- Card Hover Effect --- */
+/* ============================================================
+   MEDIA QUERY — TABLET (768px and above)
+============================================================ */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* ============================================================
+   MEDIA QUERY — DESKTOP (1024px and above)
+============================================================ */
+@media (min-width: 1024px) {
+    body {
+        font-size: 17px;
+    }
+}
+
+/* ============================================================
+   MEDIA QUERY — LARGE DESKTOP (1440px and above)
+============================================================ */
+@media (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* ============================================================
+   CSS GRID — PARKS AND ANIMALS CARD LAYOUTS
+   Mobile-First: 1 column on mobile, expands on larger screens
+============================================================ */
+
+/* Parks Grid */
+.parks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .parks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .parks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Animals Grid */
+.animals-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 576px) {
+    .animals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .animals-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================================
+   FLEXBOX — PROFILE PAGE LAYOUT
+   Stacked on mobile, side by side on desktop
+============================================================ */
+.profile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+@media (min-width: 992px) {
+    .profile-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .profile-layout .profile-main {
+        flex: 2;
+    }
+
+    .profile-layout .profile-sidebar {
+        flex: 1;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE IMAGES
+   Ensures all images scale correctly on all screen sizes
+============================================================ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* ============================================================
+   HERO SECTION — Adjusts height for different screens
+============================================================ */
+.hero-section {
+    position: relative;
+    min-height: 60vh;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        min-height: 75vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        min-height: 88vh;
+    }
+}
+
+/* Hero buttons stack on mobile, side by side on tablet */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+@media (min-width: 576px) {
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+}
+
+.navbar .btn-success {
+    font-weight: 500;
+}
+
+/* ============================================================
+   CARD HOVER EFFECTS
+============================================================ */
 .park-card,
 .animal-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -31,22 +206,9 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* --- Hero Section --- */
-.hero-section {
-    position: relative;
-}
-
-/* --- Navbar --- */
-.navbar-brand {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-}
-
-.navbar .btn-success {
-    font-weight: 500;
-}
-
-/* --- Buttons --- */
+/* ============================================================
+   BUTTONS
+============================================================ */
 .btn-success {
     background-color: var(--wk-mid-green);
     border-color: var(--wk-mid-green);
@@ -67,51 +229,64 @@ body {
     border-color: var(--wk-mid-green);
 }
 
-/* --- Forms --- */
+/* ============================================================
+   FORMS
+============================================================ */
 .form-control:focus,
 .form-select:focus {
     border-color: var(--wk-light-green);
     box-shadow: 0 0 0 0.2rem rgba(82, 183, 136, 0.25);
 }
 
-/* --- Alert Auto-dismiss --- */
+/* ============================================================
+   ALERT AUTO-DISMISS
+============================================================ */
 .alert-auto {
     animation: fadeOut 0.5s ease 4s forwards;
 }
 
 @keyframes fadeOut {
     from { opacity: 1; }
-    to   { opacity: 0; display: none; }
+    to   { opacity: 0; }
 }
 
-/* --- Page Header Banner --- */
+/* ============================================================
+   PAGE BANNER
+============================================================ */
 .page-banner {
     background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
                 url('../images/banner-bg.jpg') center/cover no-repeat;
-    padding: 60px 0;
+    padding: 40px 0;
     color: white;
 }
 
-/* --- Conservation Status Colors --- */
+@media (min-width: 768px) {
+    .page-banner {
+        padding: 60px 0;
+    }
+}
+
+/* ============================================================
+   CONSERVATION STATUS COLORS
+============================================================ */
 .status-lc { color: #198754; }
 .status-nt { color: #6c757d; }
 .status-vu { color: #0d6efd; }
 .status-en { color: #ffc107; }
 .status-cr { color: #dc3545; }
 
-/* --- Custom Scrollbar --- */
+/* ============================================================
+   CUSTOM SCROLLBAR
+============================================================ */
 ::-webkit-scrollbar        { width: 7px; }
 ::-webkit-scrollbar-track  { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb  { background: var(--wk-mid-green); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--wk-dark-green); }
 
-/* --- Footer --- */
+/* ============================================================
+   FOOTER
+============================================================ */
 footer a:hover {
     color: white !important;
     text-decoration: underline !important;
-}
-
-/* --- Responsive Image Utility --- */
-.object-fit-cover {
-    object-fit: cover;
 }
