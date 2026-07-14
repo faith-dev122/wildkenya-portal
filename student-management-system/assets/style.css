@@ -1,0 +1,110 @@
+/* =========================================================
+   Week 8 incorporated: Responsive Web Design, MOBILE-FIRST.
+   Base styles below target small screens (phones) first.
+   Media queries at 768px (tablet) and 1024px (desktop)
+   progressively enhance the layout — see bottom of file.
+   ========================================================= */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  background: #f4f6f8;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Week 9: Dark theme applied from the "theme" COOKIE */
+body.dark { background: #1e2530; color: #e6e6e6; }
+body.dark .card, body.dark table, body.dark .topbar, body.dark .footer { background: #2a3342; color: #e6e6e6; }
+body.dark input, body.dark select { background: #1e2530; color: #eee; border-color: #555; }
+body.dark th { background: #22452f; }
+
+/* --- Navigation: Flexbox (Week 8) --- */
+.topbar {
+  background: #1a3c2e;
+  color: #fff;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;   /* stacked on mobile */
+  gap: 10px;
+}
+.brand { font-weight: bold; font-size: 1.15rem; }
+.mainnav { display: flex; flex-wrap: wrap; gap: 6px; }
+.mainnav a {
+  color: #fff; text-decoration: none;
+  padding: 6px 10px; border-radius: 5px; font-size: 0.95rem;
+}
+.mainnav a:hover { background: #2e5d47; }
+.mainnav a.logout { background: #8b2e2e; }
+
+.container { flex: 1; width: 100%; max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+/* --- Cards --- */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
+  margin-bottom: 16px;
+}
+h1, h2 { color: #1a3c2e; margin-bottom: 12px; }
+body.dark h1, body.dark h2 { color: #8fd3b0; }
+
+/* Dashboard cards: CSS GRID (Week 8) — 1 column on mobile */
+.grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+
+/* --- Forms --- */
+form label { display: block; margin: 10px 0 4px; font-weight: 600; }
+form input[type=text], form input[type=email], form input[type=password], form select {
+  width: 100%; padding: 10px; border: 1px solid #bbb; border-radius: 5px; font-size: 1rem;
+}
+.btn {
+  display: inline-block; margin-top: 14px; padding: 10px 18px;
+  background: #1a3c2e; color: #fff; border: none; border-radius: 5px;
+  font-size: 1rem; cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: #2e5d47; }
+.btn.small { padding: 5px 10px; font-size: .85rem; margin: 0; }
+.btn.danger { background: #8b2e2e; }
+.btn.secondary { background: #4a5568; }
+
+/* --- Messages --- */
+.msg { padding: 12px; border-radius: 5px; margin-bottom: 14px; }
+.msg.success { background: #d9f2e3; color: #14532d; border: 1px solid #14532d; }
+.msg.error   { background: #fde2e2; color: #7f1d1d; border: 1px solid #7f1d1d; }
+.msg.info    { background: #e0ecff; color: #1e3a8a; border: 1px solid #1e3a8a; }
+
+/* --- Tables (dynamic HTML generation, Week 10) --- */
+.table-wrap { overflow-x: auto; }   /* tables scroll sideways on phones */
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: 10px; border: 1px solid #ddd; text-align: left; font-size: .95rem; }
+th { background: #1a3c2e; color: #fff; }
+tr:nth-child(even) { background: rgba(26,60,46,.06); }
+
+/* Search bar: Flexbox */
+.searchbar { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.searchbar input, .searchbar select { flex: 1; }
+
+/* --- Footer --- */
+.footer { background: #1a3c2e; color: #fff; text-align: center; padding: 12px; font-size: .85rem; }
+
+/* =========================================================
+   TABLET — min-width 768px (Week 8 media query breakpoint 1)
+   ========================================================= */
+@media (min-width: 768px) {
+  .topbar { flex-direction: row; justify-content: space-between; align-items: center; }
+  .grid { grid-template-columns: repeat(2, 1fr); }   /* 2 columns */
+  .searchbar { flex-direction: row; }
+}
+
+/* =========================================================
+   DESKTOP — min-width 1024px (Week 8 media query breakpoint 2)
+   ========================================================= */
+@media (min-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }   /* 3 columns */
+  body { font-size: 17px; }
+}
